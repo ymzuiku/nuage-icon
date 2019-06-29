@@ -1,6 +1,7 @@
 import * as React from 'react';
 
-export interface IIcon {
+
+export interface IIcon extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   /* 右上角的角标 */
   dot?: boolean;
   /* 角标比例，默认1 */
@@ -13,8 +14,6 @@ export interface IIcon {
   font?: string;
   /* symbol 尺寸 */
   symbol?: string;
-  /* 样式 */
-  className?: string;
 }
 
 export const Icon:React.FC<IIcon> = ({
@@ -33,7 +32,7 @@ export const Icon:React.FC<IIcon> = ({
     icon = <i className={`iconfont ${font} ${className}`} {...props} />;
   } else if (symbol) {
     icon = (
-      <svg className={`icon ${className}`} aria-hidden="true" {...props}>
+      <svg className={`icon ${className}`} aria-hidden="true" {...props as any}>
         <use xlinkHref={`#${symbol}`} />
       </svg>
     );
