@@ -1,0 +1,15 @@
+{
+  "name": "@nuage/icon",
+  "version": "1.0.0",
+  "main": "icon.js",
+  "types": "icon.d.ts",
+  "description": "兼容iconfont的font图标和svg图标",
+  "author": "pillar",
+  "scripts": {
+    "lib": "tscu lib --outDir ./"
+  },
+  "devDependencies": {
+    "@types/react": "^16.8.20",
+    "tscu": "^1.1.8"
+  }
+}
