@@ -1,6 +1,6 @@
 {
   "name": "@nuage/icon",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "icon.js",
   "types": "icon.d.ts",
   "description": "兼容iconfont的font图标和svg图标",
