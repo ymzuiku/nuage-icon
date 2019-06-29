@@ -32,7 +32,7 @@ export const Icon:React.FC<IIcon> = ({
 }) => {
   let icon = null;
 
-  const click = React.useCallback((event: any) => {
+  const click = (event: any) => {
     if (fastClick) {
       fastClick(event);
     }
@@ -42,7 +42,7 @@ export const Icon:React.FC<IIcon> = ({
     if (onMouseUp) {
       onMouseUp(event);
     }
-  }, []);
+  }
 
   if (font) {
     icon = <i className={`iconfont ${font} ${className}`} {...props} />;
