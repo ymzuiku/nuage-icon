@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-interface IIcon {
+export interface IIcon {
   /* 右上角的角标 */
   dot?: boolean;
   /* 角标比例，默认1 */

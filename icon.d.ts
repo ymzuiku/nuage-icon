@@ -1,5 +1,5 @@
 import * as React from 'react';
-interface IIcon {
+export interface IIcon {
     dot?: boolean;
     dotSize?: number;
     dotColor?: string;
@@ -9,4 +9,3 @@ interface IIcon {
     className?: string;
 }
 export declare const Icon: React.FC<IIcon>;
-export {};
