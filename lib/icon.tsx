@@ -45,7 +45,7 @@ export const Icon:React.FC<IIcon> = ({
   }
 
   if (font) {
-    icon = <i className={`iconfont ${font} ${className}`} {...props} />;
+    icon = <i onMouseUpCapture={click} onTouchEndCapture={click} className={`iconfont ${font} ${className}`} {...props} />;
   } else if (symbol) {
     icon = (
       <svg onMouseUpCapture={click} onTouchEndCapture={click} className={`icon ${className}`} aria-hidden="true" {...props as any}>
