@@ -13,8 +13,6 @@ export interface IIcon extends React.DetailedHTMLProps<React.HTMLAttributes<HTML
   font?: string;
   /* symbol 尺寸 */
   symbol?: string;
-  /* 兼容移动端和pc端的点击 */
-  fastClick?(event:any):any;
 }
 
 export const Icon:React.FC<IIcon> = ({
@@ -25,37 +23,23 @@ export const Icon:React.FC<IIcon> = ({
   font,
   symbol,
   className = '',
-  onTouchEnd,
-  fastClick,
-  onMouseUp,
   ...props
 }) => {
   let icon = null;
 
-  const click = (event: any) => {
-    if (fastClick) {
-      fastClick(event);
-    }
-    if (onTouchEnd) {
-      onTouchEnd(event);
-    }
-    if (onMouseUp) {
-      onMouseUp(event);
-    }
-  }
 
   if (font) {
-    icon = <i onMouseUpCapture={click} onTouchEndCapture={click} className={`iconfont ${font} ${className}`} {...props} />;
+    icon = <i  className={`iconfont ${font} ${className}`} {...props} />;
   } else if (symbol) {
     icon = (
-      <svg onMouseUpCapture={click} onTouchEndCapture={click} className={`icon ${className}`} aria-hidden="true" {...props as any}>
+      <svg  className={`icon ${className}`} aria-hidden="true" {...props as any}>
         <use xlinkHref={`#${symbol}`} />
       </svg>
     );
   }
   if (dot) {
     return (
-      <div onMouseUpCapture={click} onTouchEndCapture={click} style={{ position: 'relative' }}>
+      <div  style={{ position: 'relative' }}>
         {icon}
         <div
           style={{

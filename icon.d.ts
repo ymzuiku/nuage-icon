@@ -6,6 +6,5 @@ export interface IIcon extends React.DetailedHTMLProps<React.HTMLAttributes<HTML
     dotBorder?: string;
     font?: string;
     symbol?: string;
-    fastClick?(event: any): any;
 }
 export declare const Icon: React.FC<IIcon>;
